@@ -19,6 +19,7 @@ user_count_by_uuid = app.Table('frame_count', default=int)
 async def process(frames: faust.Stream[Frame]) -> None:
     async for frame in frames.group_by(Frame.uuid):
         user_count_by_uuid[frame.uuid] += 1
+        print('hi')
 
 
 if __name__ == "__main__":
