@@ -11,9 +11,9 @@ python 3.6 or later
 kafka
 
 
-## running and setup the application:
+## Setup and running the application:
 
-Idealy you can use Makefile to do the following steps, but I didn't have time to fully test it so here are the steps:
+Idealy you can use Makefile to do the following steps, but I didn't have time to fully test the Makefile, so here are the steps:
 
 1- clone and cd to the project repo
 
