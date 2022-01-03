@@ -6,10 +6,10 @@ import sys
 from kafka import KafkaProducer
 
 
-def produce_stream_in_file(file_name: str = path_to_file, limit: int = None):
+def produce_stream_in_file(file_name: str, limit: int = None):
     '''
     :param file_name: path to jsonlines file containing the streaming data
-    :param limit:(for the sake to run quick tests) number of events/messages to stream, if None all the data in file will be used.
+    :param limit:(for the sake to run quick tests) number of events/messages to stream, if None all the data in file will be streamed.
     :return:
     '''
     producer = KafkaProducer(bootstrap_servers=['localhost:9092'],

@@ -7,6 +7,7 @@ can replay changelog upon network failure and node restarts, allowing us to rebu
 
 ### faust requirements:
 python 3.6 or later
+
 kafka
 
 
