@@ -4,14 +4,21 @@ from datetime import datetime, timedelta
 from kafka import KafkaProducer
 
 
+# model for the counter, we dont care abot the rest of the message
 class Frame(faust.Record, validation=True, serializer='json'):
     uid: str
     ts: datetime
 
 
+# application
 app = faust.App("log-frames-streamer", broker="kafka://{}".format("localhost"))
+
+# topic definition of initial messages
 frames_topic = app.topic("frames", value_type=str, value_serializer=json, partitions=None)
+
+# topic definition that we send after consuming the first json
 uid_topic = app.topic("uid", key_type=str, value_type=Frame)
+# table definition with windowed aggregation
 uid_counts = app.Table(
     "uid_counts", default=int, key_type=str, value_type=int
 ).hopping(
