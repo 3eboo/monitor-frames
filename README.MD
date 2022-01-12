@@ -1,6 +1,6 @@
 ### approach used: 
 
-To solve the [data engineering challenge challenge](https://github.com/DoodleScheduling/hiring-challenges/tree/master/data-engineer) I used [Faust](https://github.com/robinhood/faust) library to make use of 
+I used [Faust](https://github.com/robinhood/faust) library to make use of 
 its high performance and scalability for streaming applications. To be explicit I ve made use of faust applications, agents and tables. Where faust table data structure is a distributed in-memory dict used for prsistant storage. We 
 can replay changelog upon network failure and node restarts, allowing us to rebuild the state of the table as it was before the fault.
 
